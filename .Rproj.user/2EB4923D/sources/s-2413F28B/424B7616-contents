@@ -1,0 +1,512 @@
+help(rpot.risk)
+document()
+help(rpot.risk)
+document()
+help(rpot)
+help(arq)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+document()
+help(req)
+manual_build
+manual_build()
+build_manual()
+build_manual()
+document()
+build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+help(rpot)
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+document(); build_manual()
+setwd("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri")
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_0.01.RData")
+ls()
+REST
+sapply(REST, function(x) x$convergence)
+REST[[1]]
+sapply(REST, function(x) x$convergence)
+sapply(REST, function(x) x$value)
+is.nan(REST)
+for (i in 1:500){REST[[i]]$convergence}
+i
+REST[[3]]
+is.nan(REST[[3]])
+is.nan(REST[[2]])
+for (i in 4:500){REST[[i]]$convergence}
+i
+sapply(REST, function(x) is.list(x))
+ix <- sapply(REST, function(x) is.list(x))
+REST[ix]
+sapply(REST[ix], function(x) x$convergence)
+sapply(REST[ix], function(x) x$value)
+plot(sapply(REST[ix], function(x) x$value))
+plot(sapply(REST[ix], function(x) x$value)< -5500)
+which.min(REST[ix])
+which.min(sapply(REST[ix], function(x) x$value))
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-07.RData")
+p <- 1e-07
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+source("./rsdf.R")
+source("./rsdf.R")
+source("./rsds.R")
+# Load functions
+source("./sdf.R")
+source("./sds.R")
+source("./fit.R")
+source("./llk.R")
+source("./rho.R")
+source("./rho.d.R")
+source("./rho.dd.R")
+source("./rsdf.R")
+source("./rsds.R")
+source("./rfit.R")
+source("./rllk.R")
+source("./stval.R")
+source("./rstval.R")
+model <- "frechet"
+source(paste("./code.", model,".R", sep=""))
+k     <- NULL
+d     <- 2
+rf     <- rsdf(rpar, y, log(p))
+rm(list=ls())
+# Load functions
+source("./sdf.R")
+source("./sds.R")
+source("./fit.R")
+source("./llk.R")
+source("./rho.R")
+source("./rho.d.R")
+source("./rho.dd.R")
+source("./rsdf.R")
+source("./rsds.R")
+source("./rfit.R")
+source("./rllk.R")
+source("./stval.R")
+source("./rstval.R")
+model <- "frechet"
+source(paste("./code.", model,".R", sep=""))
+k     <- NULL
+d     <- 2
+# Dataset
+load("C:\\Users\\Luca\\Dropbox\\Università\\Tesi\\RealizedPorfolio\\DJ30.Rdata")
+na <- 29
+ret <- array(0, c(dim(data[[1]]$price), na) + c(0,-1,0))
+for (i in 1:29){
+ret[,,i] <-  apply(data[[i]]$price,1,function(x){diff(log(x))})
+}
+risk <- -apply(apply(ret, c(1,2), max), 1, min)
+y <- apply(matrix(risk, 5, ), 2, max)
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-07.RData")
+p <- 1e-07
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+rf
+plot(rf[,2])
+plot(rf[,1])
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-06.RData")
+p <- 1e-06
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+plot(rf[,2])
+plot(rf[,1])
+plot(rf[,2])
+plot(exp(rf[,1]))
+plot(exp(rf[,2]))
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-05.RData")
+p <- 1e-05
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+lines(exp(rf[,1]), col=2)
+lines(exp(rf[,2]), col=2)
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-04.RData")
+p <- 1e-04
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+lines(exp(rf[,1]), col=3)
+rf[,1]
+plot(exp(rf[,1]))
+plot(exp(rf[,2]))
+plot(exp(rf[,2]), type="l")
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-03.RData")
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_0.001.RData")
+p <- 1e-03
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+plot(exp(rf[,1]))
+plot(exp(rf[,2]))
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-02.RData")
+plot(y)
+rpart
+rpar
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_1e-05.RData")
+p <- 1e-05
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rpar
+REST[[ix]]$par
+rpar   <- relist(REST[[ix]]$par)
+rpar
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rpar
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+plot(rf)
+plot(rf[,2])
+plot(rf[,2], type="l")
+which.max(rf[,2])
+plot(y)
+points(y[100], col=2)
+points(y[101], col=2)
+length(y)
+y
+points(101, y[101], col=2)
+points(100, y[100], col=2)
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_0.01.RData")
+p <- 1e-02
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rpar
+plot(rf[,2])
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_0.01.RData")
+p <- 1e-02
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+plot(rf[,2])
+plot(exp(rf[,2]))
+plot(exp(rf[,1]))
+plot(y)
+plot(y, type="l")
+plot(risk, type="l")
+# Dataset
+load("C:\\Users\\Luca\\Dropbox\\Università\\Tesi\\RealizedPorfolio\\DJ30.Rdata")
+na <- 29
+ret <- array(0, c(dim(data[[1]]$price), na) + c(0,-1,0))
+for (i in 1:29){
+ret[,,i] <-  apply(data[[i]]$price,1,function(x){diff(log(x))})
+}
+risk <- -apply(apply(ret, c(1,2), max), 1, min)
+y <- apply(matrix(risk, 5, ), 2, max)
+4784
+ret
+y <- apply(matrix(risk, 20, ), 2, max)
+plot(y)
+plot(density(y))
+save(y, file = "ym.RData", type=2)
+help(save)
+save(y, file = "ym.RData", version = 2)
+rm(list=ls())
+# Load functions
+source("./sdf.R")
+source("./sds.R")
+source("./fit.R")
+source("./llk.R")
+source("./rho.R")
+source("./rho.d.R")
+source("./rho.dd.R")
+source("./rsdf.R")
+source("./rsds.R")
+source("./rfit.R")
+source("./rllk.R")
+source("./stval.R")
+source("./rstval.R")
+model <- "ogevh"
+source(paste("./code.", model,".R", sep=""))
+k     <- NULL
+d     <- 2
+# Dataset
+load("C:\\Users\\Luca\\Dropbox\\Università\\Tesi\\RealizedPorfolio\\DJ30.Rdata")
+na <- 29
+ret <- array(0, c(dim(data[[1]]$price), na) + c(0,-1,0))
+for (i in 1:29){
+ret[,,i] <-  apply(data[[i]]$price,1,function(x){diff(log(x))})
+}
+risk <- -apply(apply(ret, c(1,2), max), 1, min)
+y <- apply(matrix(risk, 20, ), 2, max)
+RSV <- list()
+REST <- list()
+rp <- 1e-04
+for (b in 1:1){
+print(b)
+RSV[[b]] <- rstval(y, rp)
+sv <- RSV[[b]]
+REST[[b]] <- tryCatch(rfit(RSV[[b]], y, rp), error=function(e) NaN)
+}
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+load("C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/est_0.01.RData")
+p <- 1e-02
+good <- sapply(REST, function(x) is.list(x))
+ix <- which.min(sapply(REST[good], function(x) x$value))
+rpar   <- relist(REST[[ix]]$par)
+rpar$t <- exp(rpar$t)/(1+exp(rpar$t))
+rpar$q <- exp(rpar$q)
+rf     <- rsdf(rpar, y, log(p))
+rs     <- rsds(rpar, y, log(p))
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+RSV
+RSV[[b]] <- rstval(y, rp)
+q <- length(y)%/%50
+x <- 1:length(y)
+chunks <- split(y, factor(sort(x%%q)))
+est <- sapply(chunks, marg)
+min(y)
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/code.ogevh.R')
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R')
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+q <- length(y)%/%50
+x <- 1:length(y)
+chunks <- split(y, factor(sort(x%%q)))
+q
+x
+chunks
+marg(chunks[[1]])
+gamma <- -digamma(1)
+sv <- c(log(mean(chunks[[1]])/(gamma(0.9)*exp(0.1*(1-gamma)))),
+log(0.1))
+sv
+optim(sv,
+function(theta, x){
+-sum(log(pdf(x, t(theta[1:2]))))
+}, , y, control = list(maxit=1000))$par
+optim(sv,
+function(theta, x){
+-sum(log(pdf(x, t(theta))))
+}, , y, control = list(maxit=1000))$par
+sv <- c(log(median(y)/(gamma(0.9)*exp(0.1*(1-gamma)))),
+log(0.1))
+optim(sv,
+function(theta, x){
+-sum(log(pdf(x, t(theta))))
+}, , y, control = list(maxit=1000))$par
+sv
+gamma(0.9)
+est <- sapply(chunks, marg)
+sv
+theta <- sv
+-sum(log(pdf(chunks[[1]], t(theta))))
+sum(log(pdf(chunks[[1]], t(theta)))
+)
+log(pdf(chunks[[1]], t(theta))
+)
+gamma <- -digamma(1)
+sv <- c(log(median(y)/(gamma(0.95)*exp(0.05*(1-gamma)))),
+log(0.05))
+theta <- sv
+optim(sv,
+function(theta, x){
+-sum(log(pdf(x, t(theta))))
+}, , y, control = list(maxit=1000))$par
+log(pdf(chunks[[1]], t(theta)))
+gamma <- -digamma(1)
+sv <- c(log(median(y)/(gamma(0.8)*exp(0.2*(1-gamma)))),
+log(0.2))
+optim(sv,
+function(theta, x){
+-sum(log(pdf(x, t(theta))))
+}, , y, control = list(maxit=1000))$par
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+RSV
+q <- length(y)%/%50
+x <- 1:length(y)
+chunks <- split(y, factor(sort(x%%q)))
+est <- sapply(chunks, marg)
+est
+d
+not.good <- T
+# Generate starting values
+sv <- as.relistable(list())
+sv
+sv$t <- runif(d, 0.8, 1)
+sv$c <- apply(est[1:d,], 1, function(x) runif(1, min(x), max(x)))*(1-sv$t)
+sv$q <- runif(d, 0, 0.1)
+sv$k <- runif(1, min(est[d+1,]), max(est[d+1]))
+sv
+sv$k <- if (dim(est)[1] > d) runif(1, min(est[d+1,]), max(est[d+1])) else NULL
+sv
+if (dim(est)[1] > d) sv$k <- runif(1, min(est[d+1,]), max(est[d+1])) else sv$k <- NULL
+sv
+sv$k <- if (dim(est)[1] < d) runif(1, min(est[d+1,]), max(est[d+1])) else NULL
+sv
+sv$k <- if (dim(est)[1] == d) runif(1, min(est[d+1,]), max(est[d+1])) else NULL
+sv$k <- if (dim(est)[1] == d) runif(1, min(est[d,]), max(est[d])) else NULL
+sv
+source('C:/Users/Luca/Dropbox/ddlt/RobustFilter/Code/Buccheri/ProvaDati.R', encoding = 'UTF-8')
+REST
+library(devtools)
+check()
+check()
+check()
+check()
+check()
+check()
+check()
+library(devtools)
+build()
+document()
+build_manual()
+library(devtools)
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+build_manual()
+document()
+build_manual()
+document()
+check()
+check()
+check()
+check()
+build()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+document()
+build_manual()
+source('~/Prova.R')
+setwd("~/")
+source('~/Prova.R')
+source('~/Prova.R')
+source('~/Prova.R')
+source('~/Prova.R')
+rm <- rpot.fitted(fit, 0.99)
+rmf <- rpot.forecast(fit, c(1, log(sp500$rv[n])), 0.99)
+source('~/Prova.R')
+plot(rx)
+lines(rm[,2],col=2)
+fit <- arq(sp500$r, 0.99, sp500$rv)
+plot(sp500$r)
+lines(fit$q,col=4)
+arf <- arq.forecast(fit, sp500$rv[n], 0.99)
+fit <- req(sp500$r, 0.9, sp500$rv, 0.99, 0.975)
+lines(fit$var, col=2)
+reqf <- req.forecast(fit, sp500$rv[n], 0.99)
+library(devtools)
+check()
+setwd("~/FinEx")
+check()
+rm(list=ls())
+check()
+build()
+build_manual()
+install()
+source('~/Prova.R')
+library(devtools)
+setwd("~/FinEx")
+library(devtools)
+library(roxygen2)
+library(usethis)
+ls()
+use_git()
+library(devtools)
+library(roxygen2)
+library(usethis)
+use_github()
+use_git()
+use_github()
