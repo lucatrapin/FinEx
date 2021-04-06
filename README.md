@@ -13,7 +13,7 @@ remotes::install_github("lucatrapin/FinEx")
 ```
 
 ## References
-Bee, M., & Trapin, L. (2018). Estimating and forecasting conditional risk measures with extreme value theory: A review. *Risks*s, 6(2), 45.
+Bee, M., & Trapin, L. (2018). Estimating and forecasting conditional risk measures with extreme value theory: A review. *Risks*, 6(2), 45.
 
 Bee, M., Dupuis, D. J., & Trapin, L. (2018). Realized extreme quantile: A joint model for conditional quantiles and measures of volatility with EVT refinements. *Journal of Applied Econometrics*, 33(3), 398-415.
 
